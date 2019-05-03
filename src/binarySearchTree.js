@@ -10,7 +10,7 @@ class BinarySearchTree {
   }
 
   /**
-   * @desc adds a node to the tree
+   * @desc inserts a node to the tree
    * @param {number} data
    */
   addNode(data) {
@@ -42,7 +42,9 @@ class BinarySearchTree {
     }
   }
 
-  // gets minimum on the tree
+  /**
+   * @desc gets the minimum node in the tree
+   */
   getMinimum() {
     let currentNode = this.rootNode;
     while (currentNode.left !== null) {
@@ -51,7 +53,9 @@ class BinarySearchTree {
     return currentNode.data;
   }
 
-  // gets maximum on the tree
+  /**
+   * @desc gets the maximum node in the tree
+   */
   getMaximum() {
     let currentNode = this.rootNode;
     while (currentNode.right !== null) {
@@ -60,7 +64,10 @@ class BinarySearchTree {
     return currentNode.data;
   }
 
-  // checks if a node exist on the tree
+  /**
+   * @desc checks if a node exist on the tree
+   * @param {number} data
+   */
   checkNode(data) {
     let currentNode = this.rootNode;
     while (currentNode) {
@@ -74,39 +81,6 @@ class BinarySearchTree {
     }
     return false;
   }
-
-  // removes a node from the tree
-  // removeNode(rootNode, data) {
-  //   if (rootNode === null) {
-  //     return null;
-  //   } else if (data === rootNode.data) {
-  //     if (rootNode.left === null && rootNode.right === null) {
-  //       return null;
-  //     } else if (rootNode.left === null) {
-  //       return rootNode.right;
-  //     } else if (rootNode.right === null) {
-  //       return rootNode.left;
-  //     }
-
-  //     let tempNode = rootNode.right;
-  //     while (tempNode.left !== null) {
-  //       tempNode = tempNode.left;
-  //     }
-  //     rootNode.data = tempNode.data;
-  //     rootNode.right = removeNode(rootNode.right, tempNode.data);
-  //     return rootNode;
-  //   } else if (data < rootNode.data){
-  //     rootNode.left = removeNode(rootNode.left, data);
-  //     return rootNode;
-  //   } else {
-  //     rootNode.right = remove(rootNode.right, data);
-  //     return rootNode;
-  //   }
-  // }
-
-  // // calls remove node
-  // handleRemove(data) {
-  //   this.removeNode(data);
-  //   this.root = this.removeNode(this.root, data);
-  // }
 }
+
+module.exports = BinarySearchTree;
